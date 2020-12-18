@@ -1,0 +1,60 @@
+#submit:hover
+{
+  background-color: yellow;
+}
+#again:hover
+{
+  background-color:yellow;
+}
+#submit:active
+{
+  transform: translateY(4px);
+  box-shadow: 0 8px 16px 0;
+}
+#again:hover
+{
+
+}
+#submit
+{
+  border: 2px solid orange;
+  border-radius: 30px;
+  height:30px;
+}
+#again
+{
+  border: 2px solid orange;
+  border-radius: 20px;
+  height:30px;
+}
+body
+{
+background-color: blue;
+}
+hr
+{
+  height: 4px;
+  color: red;
+  background-color: red;
+}
+#image
+{
+  width: 20%;
+  height: 20%;
+  padding-bottom: 20px;
+}
+#list
+{
+  color: orange;
+  font-size: 24px;
+}
+#score
+{
+  color: orange;
+  font-size: 24px;
+}
+#heading
+{
+  color: orange;
+  font-size: 24px;
+}

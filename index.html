@@ -1,0 +1,90 @@
+<html>
+ <head>
+   <title> Picture Quiz </title>
+   <link rel = "stylesheet" href = "Final.css">
+  <script>
+  //use .tolowercase to force answer into lowercase
+    var answerKey = "";
+    var correct = "shark";
+    var count = 0;
+    var score = 0;
+    function hide()
+    {
+      document.getElementById("again").style.visibility = "hidden";
+    }
+    function reset()
+    {
+      answerKey = "";
+      score = 0;
+      count = 0;
+      correct = "shark";
+      document.getElementById("image").innerHTML = "<img src = 'Shark.jpg'>";
+      document.getElementById("image").style.visibility = "visible";
+      document.getElementById("list").style.visibility = "hidden";
+      document.getElementById("list").innerHTML = "";
+      document.getElementById("heading").style.visibility = "hidden";
+      document.getElementById("score").style.visibility = "hidden";
+      hide();
+    }
+    function check()
+    {
+      count = count + 1;
+      var answer = document.getElementById("answer").value;
+      answer = answer.toLowerCase();
+      answerKey = answerKey + correct + " | Your answer : " + answer + "<br>";
+      if(answer == correct)
+      {
+        score = score + 1;
+      }
+      if(count === 5)
+      {
+        document.getElementById("image").style.visibility = "hidden";
+        document.getElementById("heading").innerHTML = "Results";
+        document.getElementById("list").innerHTML = answerKey;
+        document.getElementById("again").style.visibility = "visible";
+        document.getElementById("score").innerHTML = score + "/5";
+        document.getElementById("score").style.visibility = "visible";
+        document.getElementById("list").style.visibility = "visible";
+        document.getElementById("heading").style.visibility = "visible";
+      }
+      if(count === 4)
+      {
+        document.getElementById("image").innerHTML = "<img src ='cat.jpg' height = '168px' width = '368px'>";
+        correct = "cat";
+      }
+      if(count === 3)
+      {
+        document.getElementById("image").innerHTML = "<img src = 'octopus.jpg' height = '168px' width = '368px'>";
+        correct = "octopus";
+      }
+      if(count === 2)
+      {
+        document.getElementById("image").innerHTML = "<img src = 'bird.jpg' height = '168px' width = '368px'>";
+        correct = "bird";
+      }
+      if(count === 1)
+      {
+        document.getElementById("image").innerHTML = "<img src = 'goat.jpg' height = '168px' width = '368px' >";
+        correct = "goat";
+      }
+    }
+  </script>
+ </head>
+
+ <body onload = "hide()">
+  <center>
+  <div id = "div">
+   <span id = "image"><img src = "shark.jpg"></span>
+ </div>
+   <br>
+   <span id = "heading"></span>
+   <br><hr><br>
+   <span id = "score"></span>
+   <br>
+   <span id = "list"></span>
+   <input type = "text" id = "answer">
+   <input id = "submit" type = "button" value = "Submit" onclick = "check()">
+   <input id = "again" type = "button" value = "Play Again" onclick = "reset()">
+  </center>
+ </body>
+</html>
